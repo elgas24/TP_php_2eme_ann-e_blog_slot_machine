@@ -66,17 +66,21 @@ class SlotMachineController
         $combination = $reel1 . $reel2 . $reel3;
         // Calculer le gain
         $gain = isset($paytable[$combination]) ? $paytable[$combination] : 0;
-        // Réponse JSON
-        // echo json_encode([
-        //     'success' => true,
-        //     'reels' => [$reel1, $reel2, $reel3],
-        //     'gain' => $gain,
-        // ]);
 
-       
+        header('Content-Type: application/json');
+        //Réponse JSON
+        echo json_encode([
+            'success' => true,
+            'reels' => [$reel1, $reel2, $reel3],
+            'gain' => $gain,
+        ]);
+
+        exit;
+
+    }
+
+    public static function displaySlot(){
         require ROOT . "/views/slot_machine2.php";
         require_once ROOT . "/templates/global.php";
-
-
     }
 }

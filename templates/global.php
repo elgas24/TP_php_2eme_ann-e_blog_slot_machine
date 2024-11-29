@@ -18,7 +18,7 @@
       <li><a href="/articles">Nos articles</a></li>
       <li><a href="/articles/4">Article 4</a></li>
       <li><a href="/contact">Contact</a></li>
-      <li><a href="/slot-machine">Jouer</a></li>
+      <li><a href="/game">Jouer</a></li>
     </ul>
     <div class="burger">
       <span></span>
@@ -37,6 +37,6 @@
 </footer>
 
 <script src="<?="/sources/js/burger.js?v=".filemtime(ROOT."/sources/js/burger.js")?>" ></script>
-</body>
+<!-- </body> -->
 
 </html>

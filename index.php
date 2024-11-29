@@ -23,7 +23,7 @@ $article_test = [
     "author" => "webgas24"
 ];
 
-$myArray = ["a"=>"red","b"=>"green","c"=>"blue","d"=>"yellow","e"=>"purple"];
+$myArray = ["a" => "red", "b" => "green", "c" => "blue", "d" => "yellow", "e" => "purple"];
 
 
 $uri = $_SERVER['REQUEST_URI'];
@@ -81,9 +81,15 @@ switch (true) {
         $router->get("/slot-machine", SlotMachineController::randomise($myArray));
         break;
 
-        case ($uri === "/game"):
-            $router->get("/game", SlotMachineController::selectRandom());
-            break;
+    case (strpos($uri, '/game')===0):
+        if ($uri === '/game/fetch') {
+            $router->get("/game/fetch", SlotMachineController::selectRandom());
+            exit;
+        } 
+            $router->get("/game", SlotMachineController::displaySlot());
+
+        
+        break;
 
     default:
 
